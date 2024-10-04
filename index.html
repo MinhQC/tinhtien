@@ -13,6 +13,20 @@
             font-weight: bold;
             margin-bottom: 5px;
         }
+        .total-label {
+            font-weight: bold;
+        }
+        .total-amount {
+            color: red;
+            background-color: yellow;
+            padding: 5px;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        .separator {
+            border-top: 2px solid #000;
+            margin: 15px 0;
+        }
     </style>
 </head>
 <body>
@@ -58,10 +72,12 @@
                 </div>
                 <div class="mb-3">
                     <label class="readonly-label">Tiền phòng:</label>
-                    <span id="roomFee1" class="text-bold">1.000.000 VNĐ</span>
+                    <span id="roomFee1" class="readonly-label">1.000.000 VNĐ</span>
                 </div>
-                <p>Tiền điện: <span id="fee1">0 VNĐ</span></p>
-                <p>Tổng tiền: <span id="total1">0 VNĐ</span></p>
+                <p class="total-label">Tiền điện: <span id="fee1">0 VNĐ</span></p>
+                <p class="total-label">Tiền nước: <span id="waterFeeDisplay1">0 VNĐ</span></p>
+                <div class="separator"></div>
+                <p class="total-label total-amount">Tổng tiền: <span id="total1">0 VNĐ</span></p>
             </div>
 
             <!-- Repeat for other tabs (Tab 2 to Tab 6) -->
@@ -76,10 +92,12 @@
                 </div>
                 <div class="mb-3">
                     <label class="readonly-label">Tiền phòng:</label>
-                    <span id="roomFee2" class="text-bold">1.200.000 VNĐ</span> <!-- Flexible value -->
+                    <span id="roomFee2">1.200.000 VNĐ</span> <!-- Flexible value -->
                 </div>
-                <p>Tiền điện: <span id="fee2">0 VNĐ</span></p>
-                <p>Tổng tiền: <span id="total2">0 VNĐ</span></p>
+                <p class="total-label">Tiền điện: <span id="fee2">0 VNĐ</span></p>
+                <p class="total-label">Tiền nước: <span id="waterFeeDisplay2">0 VNĐ</span></p>
+                <div class="separator"></div>
+                <p class="total-amount">Tổng tiền: <span id="total2">0 VNĐ</span></p>
             </div>
 
             <div class="tab-pane fade" id="content3" role="tabpanel">
@@ -93,10 +111,12 @@
                 </div>
                 <div class="mb-3">
                     <label class="readonly-label">Tiền phòng:</label>
-                    <span id="roomFee3" class="text-bold">1.500.000 VNĐ</span> <!-- Flexible value -->
+                    <span id="roomFee3">1.500.000 VNĐ</span> <!-- Flexible value -->
                 </div>
-                <p>Tiền điện: <span id="fee3">0 VNĐ</span></p>
-                <p>Tổng tiền: <span id="total3">0 VNĐ</span></p>
+                <p class="total-label">Tiền điện: <span id="fee3">0 VNĐ</span></p>
+                <p class="total-label">Tiền nước: <span id="waterFeeDisplay3">0 VNĐ</span></p>
+                <div class="separator"></div>
+                <p class="total-amount">Tổng tiền: <span id="total3">0 VNĐ</span></p>
             </div>
 
             <div class="tab-pane fade" id="content4" role="tabpanel">
@@ -110,10 +130,12 @@
                 </div>
                 <div class="mb-3">
                     <label class="readonly-label">Tiền phòng:</label>
-                    <span id="roomFee4" class="text-bold">1.600.000 VNĐ</span> <!-- Flexible value -->
+                    <span id="roomFee4">1.600.000 VNĐ</span> <!-- Flexible value -->
                 </div>
-                <p>Tiền điện: <span id="fee4">0 VNĐ</span></p>
-                <p>Tổng tiền: <span id="total4">0 VNĐ</span></p>
+                <p class="total-label">Tiền điện: <span id="fee4">0 VNĐ</span></p>
+                <p class="total-label">Tiền nước: <span id="waterFeeDisplay4">0 VNĐ</span></p>
+                <div class="separator"></div>
+                <p class="total-amount">Tổng tiền: <span id="total4">0 VNĐ</span></p>
             </div>
 
             <div class="tab-pane fade" id="content5" role="tabpanel">
@@ -127,10 +149,12 @@
                 </div>
                 <div class="mb-3">
                     <label class="readonly-label">Tiền phòng:</label>
-                    <span id="roomFee5" class="text-bold">1.700.000 VNĐ</span> <!-- Flexible value -->
+                    <span id="roomFee5">1.700.000 VNĐ</span> <!-- Flexible value -->
                 </div>
-                <p>Tiền điện: <span id="fee5">0 VNĐ</span></p>
-                <p>Tổng tiền: <span id="total5">0 VNĐ</span></p>
+                <p class="total-label">Tiền điện: <span id="fee5">0 VNĐ</span></p>
+                <p class="total-label">Tiền nước: <span id="waterFeeDisplay5">0 VNĐ</span></p>
+                <div class="separator"></div>
+                <p class="total-amount">Tổng tiền: <span id="total5">0 VNĐ</span></p>
             </div>
 
             <div class="tab-pane fade" id="content6" role="tabpanel">
@@ -144,11 +168,12 @@
                 </div>
                 <div class="mb-3">
                     <label class="readonly-label">Tiền phòng:</label>
-                    <span id="roomFee6" class="text-bold">1.800.000 VNĐ</span> <!-- Flexible value -->
+                    <span id="roomFee6">1.800.000 VNĐ</span> <!-- Flexible value -->
                 </div>
-                <p>Tiền điện: <span id="fee6">0 VNĐ</span></p>
-				<br>
-                <p>Tổng tiền: <span id="total6">0 VNĐ</span></p>
+                <p class="total-label">Tiền điện: <span id="fee6">0 VNĐ</span></p>
+                <p class="total-label">Tiền nước: <span id="waterFeeDisplay6">0 VNĐ</span></p>
+                <div class="separator"></div>
+                <p class="total-amount">Tổng tiền: <span id="total6">0 VNĐ</span></p>
             </div>
         </div>
     </div>
@@ -171,6 +196,7 @@
             const totalFee = (parseFloat(electricityFee) || 0) + (parseFloat(waterFee) || 0) + roomFee;
 
             document.getElementById(`fee${tabIndex}`).innerText = formatCurrency(electricityFee);
+            document.getElementById(`waterFeeDisplay${tabIndex}`).innerText = formatCurrency(waterFee);
             document.getElementById(`total${tabIndex}`).innerText = formatCurrency(totalFee);
         }
     </script>
