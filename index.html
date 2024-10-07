@@ -44,28 +44,29 @@
             <!-- Tab 1 -->
             <div class="tab-pane fade show active" id="content1" role="tabpanel">
 			    <div class="mb-2 hstack">
-			        <label for="oldQuantity1" class="form-label" style="width: 50%;">Chỉ số điện cũ (kWh):</label>
+			        <label for="oldQuantity1" class="form-label" style="width: 50%;">Chỉ số điện cũ: <br>(kWh)</label>
 			        <input type="number" id="oldQuantity1" class="form-control" placeholder="Chỉ số điện cũ" 
 			        	inputmode="numeric" pattern="[0-9]*" oninput="calculateFee(1)" style="width: 50%;">
 			    </div>
 			    <div class="mb-2 hstack">
-			        <label for="newQuantity1" class="form-label" style="width: 50%;">Chỉ số điện mới (kWh):</label>
+			        <label for="newQuantity1" class="form-label" style="width: 50%;">Chỉ số điện mới: <br>(kWh)</label>
 			        <input type="number" id="newQuantity1" class="form-control" placeholder="Chỉ số điện mới" 
 			        	inputmode="numeric" pattern="[0-9]*" oninput="calculateFee(1)" style="width: 50%;">
 			    </div>
 			    <div class="mb-2 hstack">
-			        <label for="waterFee1" class="form-label" style="width: 50%;">Tiền nước:</label>
+			        <label for="waterFee1" class="form-label" style="width: 50%;">Tiền nước: <br>(x 1000 VNĐ)</label>
 			        <input type="number" id="waterFee1" class="form-control" placeholder="Tiền nước" 
 			        	inputmode="numeric" pattern="[0-9]*" oninput="calculateFee(1)" style="width: 50%;">
 			    </div>
 			    <div class="mb-2 hstack">
-			        <label for="roomFee1" class="form-label" style="width: 50%;">Tiền phòng:</label>
+			        <label for="roomFee1" class="form-label" style="width: 50%; word-wrap: break-word">Tiền phòng: <br>(x1000 VNĐ)</label>
 			        <input type="number" id="roomFee1" class="form-control" placeholder="Tiền phòng" 
 			        	inputmode="numeric" pattern="[0-9]*" value="1800" oninput="calculateFee(1)" style="width: 50%;">
 			    </div>
 			    
-			    <p class="total-label">Tiền điện (x 1000 VNĐ): <span id="fee1">0 VNĐ</span></p>
-			    <p class="total-label">Tiền nước: (x1000 VNĐ): <span id="waterFeeDisplay1">0 VNĐ</span></p>
+			    <p class="total-label">Tiền điện: <span id="fee1">0 VNĐ</span></p>
+			    <p class="total-label">Tiền nước: <span id="waterFeeDisplay1">0 VNĐ</span></p>
+			    <p class="total-label">Tiền phòng: <span id="roomFeeDisplay1">0 VNĐ</span></p>
 			    <div class="separator"></div>
 			    <p class="total-label total-amount">Tổng tiền: <span id="total1">0 VNĐ</span></p>
 			</div>
@@ -73,28 +74,29 @@
             <!-- Tab 2 -->
             <div class="tab-pane fade" id="content2" role="tabpanel">
 			    <div class="mb-2 hstack">
-			        <label for="oldQuantity2" class="form-label" style="width: 50%;">Chỉ số điện cũ (kWh):</label>
+			        <label for="oldQuantity2" class="form-label" style="width: 50%;">Chỉ số điện cũ: <br>(kWh)</label>
 			        <input type="number" id="oldQuantity2" class="form-control" placeholder="Chỉ số điện cũ" 
 			        	inputmode="numeric" pattern="[0-9]*" oninput="calculateFee(2)" style="width: 50%;">
 			    </div>
 			    <div class="mb-2 hstack">
-			        <label for="newQuantity2" class="form-label" style="width: 50%;">Chỉ số điện mới (kWh):</label>
+			        <label for="newQuantity2" class="form-label" style="width: 50%;">Chỉ số điện mới: <br>(kWh)</label>
 			        <input type="number" id="newQuantity2" class="form-control" placeholder="Chỉ số điện mới" 
 			        	inputmode="numeric" pattern="[0-9]*" oninput="calculateFee(2)" style="width: 50%;">
 			    </div>
 			    <div class="mb-2 hstack">
-			        <label for="waterFee2" class="form-label" style="width: 50%;">Tiền nước:</label>
+			        <label for="waterFee2" class="form-label" style="width: 50%;">Tiền nước: <br>(x 1000 VNĐ)</label>
 			        <input type="number" id="waterFee2" class="form-control" placeholder="Tiền nước" 
 			        	inputmode="numeric" pattern="[0-9]*" oninput="calculateFee(2)" style="width: 50%;">
 			    </div>
 			    <div class="mb-2 hstack">
-			        <label for="roomFee2" class="form-label" style="width: 50%;">Tiền phòng:</label>
+			        <label for="roomFee2" class="form-label" style="width: 50%;">Tiền phòng: <br>(x1000 VNĐ)</label>
 			        <input type="number" id="roomFee2" class="form-control" placeholder="Tiền phòng" 
 			        	inputmode="numeric" pattern="[0-9]*" value="1800" oninput="calculateFee(2)" style="width: 50%;">
 			    </div>
 			    
-			    <p class="total-label">Tiền điện (x 1000 VNĐ): <span id="fee2">0 VNĐ</span></p>
-			    <p class="total-label">Tiền nước: (x1000 VNĐ): <span id="waterFeeDisplay2">0 VNĐ</span></p>
+			    <p class="total-label">Tiền điện: <span id="fee2">0 VNĐ</span></p>
+			    <p class="total-label">Tiền nước: <span id="waterFeeDisplay2">0 VNĐ</span></p>
+			    <p class="total-label">Tiền phòng: <span id="roomFeeDisplay2">0 VNĐ</span></p>
 			    <div class="separator"></div>
 			    <p class="total-label total-amount">Tổng tiền: <span id="total2">0 VNĐ</span></p>
 			</div>
@@ -102,28 +104,29 @@
             <!-- Tab 3 -->
             <div class="tab-pane fade" id="content3" role="tabpanel">
 			    <div class="mb-2 hstack">
-			        <label for="oldQuantity3" class="form-label" style="width: 50%;">Chỉ số điện cũ (kWh):</label>
+			        <label for="oldQuantity3" class="form-label" style="width: 50%;">Chỉ số điện cũ: <br>(kWh)</label>
 			        <input type="number" id="oldQuantity3" class="form-control" placeholder="Chỉ số điện cũ" 
 			        	inputmode="numeric" pattern="[0-9]*" oninput="calculateFee(3)" style="width: 50%;">
 			    </div>
 			    <div class="mb-2 hstack">
-			        <label for="newQuantity3" class="form-label" style="width: 50%;">Chỉ số điện mới (kWh):</label>
+			        <label for="newQuantity3" class="form-label" style="width: 50%;">Chỉ số điện mới: <br>(kWh)</label>
 			        <input type="number" id="newQuantity3" class="form-control" placeholder="Chỉ số điện mới" 
 			        	inputmode="numeric" pattern="[0-9]*" oninput="calculateFee(3)" style="width: 50%;">
 			    </div>
 			    <div class="mb-2 hstack">
-			        <label for="waterFee3" class="form-label" style="width: 50%;">Tiền nước:</label>
+			        <label for="waterFee3" class="form-label" style="width: 50%;">Tiền nước: <br>(x 1000 VNĐ)</label>
 			        <input type="number" id="waterFee3" class="form-control" placeholder="Tiền nước" 
 			        	inputmode="numeric" pattern="[0-9]*" oninput="calculateFee(3)" style="width: 50%;">
 			    </div>
 			    <div class="mb-2 hstack">
-			        <label for="roomFee3" class="form-label" style="width: 50%;">Tiền phòng:</label>
+			        <label for="roomFee3" class="form-label" style="width: 50%;">Tiền phòng: <br>(x1000 VNĐ)</label>
 			        <input type="number" id="roomFee3" class="form-control" placeholder="Tiền phòng" 
 			        	inputmode="numeric" pattern="[0-9]*" value="1800" oninput="calculateFee(3)" style="width: 50%;">
 			    </div>
 			    
-			    <p class="total-label">Tiền điện (x 1000 VNĐ): <span id="fee3">0 VNĐ</span></p>
-			    <p class="total-label">Tiền nước: (x1000 VNĐ): <span id="waterFeeDisplay3">0 VNĐ</span></p>
+			    <p class="total-label">Tiền điện: <span id="fee3">0 VNĐ</span></p>
+			    <p class="total-label">Tiền nước: <span id="waterFeeDisplay3">0 VNĐ</span></p>
+			    <p class="total-label">Tiền phòng: <span id="roomFeeDisplay3">0 VNĐ</span></p>
 			    <div class="separator"></div>
 			    <p class="total-label total-amount">Tổng tiền: <span id="total3">0 VNĐ</span></p>
 			</div>
@@ -131,28 +134,29 @@
             <!-- Tab 4 -->
             <div class="tab-pane fade" id="content4" role="tabpanel">
 			    <div class="mb-2 hstack">
-			        <label for="oldQuantity4" class="form-label" style="width: 50%;">Chỉ số điện cũ (kWh):</label>
+			        <label for="oldQuantity4" class="form-label" style="width: 50%;">Chỉ số điện cũ: <br>(kWh)</label>
 			        <input type="number" id="oldQuantity4" class="form-control" placeholder="Chỉ số điện cũ" 
 			        	inputmode="numeric" pattern="[0-9]*" oninput="calculateFee(4)" style="width: 50%;">
 			    </div>
 			    <div class="mb-2 hstack">
-			        <label for="newQuantity4" class="form-label" style="width: 50%;">Chỉ số điện mới (kWh):</label>
+			        <label for="newQuantity4" class="form-label" style="width: 50%;">Chỉ số điện mới: <br>(kWh)</label>
 			        <input type="number" id="newQuantity4" class="form-control" placeholder="Chỉ số điện mới" 
 			        	inputmode="numeric" pattern="[0-9]*" oninput="calculateFee(4)" style="width: 50%;">
 			    </div>
 			    <div class="mb-2 hstack">
-			        <label for="waterFee4" class="form-label" style="width: 50%;">Tiền nước:</label>
+			        <label for="waterFee4" class="form-label" style="width: 50%;">Tiền nước: <br>(x 1000 VNĐ)</label>
 			        <input type="number" id="waterFee4" class="form-control" placeholder="Tiền nước" 
 			        	inputmode="numeric" pattern="[0-9]*" oninput="calculateFee(4)" style="width: 50%;">
 			    </div>
 			    <div class="mb-2 hstack">
-			        <label for="roomFee4" class="form-label" style="width: 50%;">Tiền phòng:</label>
+			        <label for="roomFee4" class="form-label" style="width: 50%;">Tiền phòng: <br>(x1000 VNĐ)</label>
 			        <input type="number" id="roomFee4" class="form-control" placeholder="Tiền phòng" 
 			        	inputmode="numeric" pattern="[0-9]*" value="1800" oninput="calculateFee(4)" style="width: 50%;">
 			    </div>
 			    
-			    <p class="total-label">Tiền điện (x 1000 VNĐ): <span id="fee4">0 VNĐ</span></p>
-			    <p class="total-label">Tiền nước: (x1000 VNĐ): <span id="waterFeeDisplay4">0 VNĐ</span></p>
+			    <p class="total-label">Tiền điện: <span id="fee4">0 VNĐ</span></p>
+			    <p class="total-label">Tiền nước: <span id="waterFeeDisplay4">0 VNĐ</span></p>
+			    <p class="total-label">Tiền phòng: <span id="roomFeeDisplay4">0 VNĐ</span></p>
 			    <div class="separator"></div>
 			    <p class="total-label total-amount">Tổng tiền: <span id="total4">0 VNĐ</span></p>
 			</div>
@@ -160,28 +164,29 @@
             <!-- Tab 5 -->
             <div class="tab-pane fade" id="content5" role="tabpanel">
 			    <div class="mb-2 hstack">
-			        <label for="oldQuantity5" class="form-label" style="width: 50%;">Chỉ số điện cũ (kWh):</label>
+			        <label for="oldQuantity5" class="form-label" style="width: 50%;">Chỉ số điện cũ: <br>(kWh)</label>
 			        <input type="number" id="oldQuantity5" class="form-control" placeholder="Chỉ số điện cũ" 
 			        	inputmode="numeric" pattern="[0-9]*" oninput="calculateFee(5)" style="width: 50%;">
 			    </div>
 			    <div class="mb-2 hstack">
-			        <label for="newQuantity5" class="form-label" style="width: 50%;">Chỉ số điện mới (kWh):</label>
+			        <label for="newQuantity5" class="form-label" style="width: 50%;">Chỉ số điện mới: <br>(kWh)</label>
 			        <input type="number" id="newQuantity5" class="form-control" placeholder="Chỉ số điện mới" 
 			        	inputmode="numeric" pattern="[0-9]*" oninput="calculateFee(5)" style="width: 50%;">
 			    </div>
 			    <div class="mb-2 hstack">
-			        <label for="waterFee5" class="form-label" style="width: 50%;">Tiền nước:</label>
+			        <label for="waterFee5" class="form-label" style="width: 50%;">Tiền nước: <br>(x 1000 VNĐ)</label>
 			        <input type="number" id="waterFee5" class="form-control" placeholder="Tiền nước" 
 			        	inputmode="numeric" pattern="[0-9]*" oninput="calculateFee(5)" style="width: 50%;">
 			    </div>
 			    <div class="mb-2 hstack">
-			        <label for="roomFee5" class="form-label" style="width: 50%;">Tiền phòng:</label>
+			        <label for="roomFee5" class="form-label" style="width: 50%;">Tiền phòng: <br>(x1000 VNĐ)</label>
 			        <input type="number" id="roomFee5" class="form-control" placeholder="Tiền phòng" 
 			        	inputmode="numeric" pattern="[0-9]*" value="1800" oninput="calculateFee(5)" style="width: 50%;">
 			    </div>
 			    
-			    <p class="total-label">Tiền điện (x 1000 VNĐ): <span id="fee5">0 VNĐ</span></p>
-			    <p class="total-label">Tiền nước: (x1000 VNĐ): <span id="waterFeeDisplay5">0 VNĐ</span></p>
+			    <p class="total-label">Tiền điện: <span id="fee5">0 VNĐ</span></p>
+			    <p class="total-label">Tiền nước: <span id="waterFeeDisplay5">0 VNĐ</span></p>
+			    <p class="total-label">Tiền phòng: <span id="roomFeeDisplay5">0 VNĐ</span></p>
 			    <div class="separator"></div>
 			    <p class="total-label total-amount">Tổng tiền: <span id="total5">0 VNĐ</span></p>
 			</div>
@@ -189,28 +194,29 @@
             <!-- Tab 6 -->
             <div class="tab-pane fade" id="content6" role="tabpanel">
 			    <div class="mb-2 hstack">
-			        <label for="oldQuantity6" class="form-label" style="width: 50%;">Chỉ số điện cũ (kWh):</label>
+			        <label for="oldQuantity6" class="form-label" style="width: 50%;">Chỉ số điện cũ: <br>(kWh)</label>
 			        <input type="number" id="oldQuantity6" class="form-control" placeholder="Chỉ số điện cũ" 
 			        	inputmode="numeric" pattern="[0-9]*" oninput="calculateFee(6)" style="width: 50%;">
 			    </div>
 			    <div class="mb-2 hstack">
-			        <label for="newQuantity6" class="form-label" style="width: 50%;">Chỉ số điện mới (kWh):</label>
+			        <label for="newQuantity6" class="form-label" style="width: 50%;">Chỉ số điện mới: <br>(kWh)</label>
 			        <input type="number" id="newQuantity6" class="form-control" placeholder="Chỉ số điện mới" 
 			        	inputmode="numeric" pattern="[0-9]*" oninput="calculateFee(6)" style="width: 50%;">
 			    </div>
 			    <div class="mb-2 hstack">
-			        <label for="waterFee6" class="form-label" style="width: 50%;">Tiền nước:</label>
+			        <label for="waterFee6" class="form-label" style="width: 50%;">Tiền nước: <br>(x 1000 VNĐ)</label>
 			        <input type="number" id="waterFee6" class="form-control" placeholder="Tiền nước" 
 			        	inputmode="numeric" pattern="[0-9]*" oninput="calculateFee(6)" style="width: 50%;">
 			    </div>
 			    <div class="mb-2 hstack">
-			        <label for="roomFee6" class="form-label" style="width: 50%;">Tiền phòng:</label>
+			        <label for="roomFee6" class="form-label" style="width: 50%;">Tiền phòng: <br>(x1000 VNĐ)</label>
 			        <input type="number" id="roomFee6" class="form-control" placeholder="Tiền phòng" 
 			        	inputmode="numeric" pattern="[0-9]*" value="2000" oninput="calculateFee(6)" style="width: 50%;">
 			    </div>
 			    
-			    <p class="total-label">Tiền điện (x 1000 VNĐ): <span id="fee6">0 VNĐ</span></p>
-			    <p class="total-label">Tiền nước (x 1000 VNĐ): <span id="waterFeeDisplay6">0 VNĐ</span></p>
+			    <p class="total-label">Tiền điện: <span id="fee6">0 VNĐ</span></p>
+			    <p class="total-label">Tiền nước: <span id="waterFeeDisplay6">0 VNĐ</span></p>
+			    <p class="total-label">Tiền phòng: <span id="roomFeeDisplay6">0 VNĐ</span></p>
 			    <div class="separator"></div>
 			    <p class="total-label total-amount">Tổng tiền: <span id="total6">0 VNĐ</span></p>
 			</div>
@@ -227,8 +233,8 @@
 	    function calculateFee(tabIndex) {
 	        const oldQuantity = parseFloat(document.getElementById(`oldQuantity${tabIndex}`).value) || 0;
 	        const newQuantity = parseFloat(document.getElementById(`newQuantity${tabIndex}`).value) || 0;
-	        const waterFee = parseFloat(document.getElementById(`waterFee${tabIndex}`).value) || 0;
-	        const roomFee = parseFloat(document.getElementById(`roomFee${tabIndex}`).value) || 0;
+	        const waterFee = parseFloat(document.getElementById(`waterFee${tabIndex}`).value * 1000) || 0;
+	        const roomFee = parseFloat(document.getElementById(`roomFee${tabIndex}`).value * 1000) || 0;
 	
 	        const quantity = newQuantity - oldQuantity; // Calculate the electricity consumption
 	        const electricityFee = quantity * constantValue;
@@ -236,8 +242,22 @@
 	
 	        document.getElementById(`fee${tabIndex}`).innerText = formatCurrency(electricityFee);
 	        document.getElementById(`waterFeeDisplay${tabIndex}`).innerText = formatCurrency(waterFee);
+	        document.getElementById(`roomFeeDisplay${tabIndex}`).innerText = formatCurrency(roomFee);
 	        document.getElementById(`total${tabIndex}`).innerText = formatCurrency(totalFee);
 	    }
+	    
+	    document.addEventListener('DOMContentLoaded', function() {
+	        calculateFee(1);
+	        
+	        // Listen for the Bootstrap tab shown event.
+	        const tabLinks = document.querySelectorAll('a[data-bs-toggle="tab"]');
+	        tabLinks.forEach((tabLink, index) => {
+	            tabLink.addEventListener('shown.bs.tab', function() {
+	                // Calculate fee for the corresponding tab index when the tab is shown.
+	                calculateFee(index + 1);
+	            });
+	        });
+	    });
     </script>
 </body>
 </html>
