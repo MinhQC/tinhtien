@@ -3,35 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Electric, Water, and Room Fee Calculator</title>
+    <title>Tính tiền phòng trọ</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
-    <style>
-        .tab-content input {
-            margin-bottom: 10px;
-        }
-        .readonly-label {
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-        .total-label {
-            font-weight: bold;
-        }
-        .total-amount {
-            color: red;
-            background-color: yellow;
-            padding: 5px;
-            border-radius: 4px;
-            margin-top: 10px;
-        }
-        .separator {
-            border-top: 2px solid #000;
-            margin: 15px 0;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 </head>
 <body>
     <div class="container mt-3">
-        <h2>Tính tiền điện, nước và phòng</h2>
+        <h2>Tính tiền phòng trọ</h2>
         <!-- Tab navigation -->
         <ul class="nav nav-tabs" id="feeCalculatorTabs" role="tablist">
             <li class="nav-item">
@@ -62,143 +43,201 @@
         <div class="tab-content mt-3">
             <!-- Tab 1 -->
             <div class="tab-pane fade show active" id="content1" role="tabpanel">
-                <div class="mb-3">
-                    <label for="quantity1" class="form-label">Nhập chỉ số điện (kWh)</label>
-                    <input type="number" id="quantity1" class="form-control" placeholder="Enter quantity" oninput="calculateFee(1)">
-                </div>
-                <div class="mb-3">
-                    <label for="waterFee1" class="form-label">Tiền nước</label>
-                    <input type="number" id="waterFee1" class="form-control" placeholder="Enter water fee" oninput="calculateFee(1)">
-                </div>
-                <div class="mb-3">
-                    <label class="readonly-label">Tiền phòng:</label>
-                    <span id="roomFee1" class="readonly-label">1.000.000 VNĐ</span>
-                </div>
-                <p class="total-label">Tiền điện: <span id="fee1">0 VNĐ</span></p>
-                <p class="total-label">Tiền nước: <span id="waterFeeDisplay1">0 VNĐ</span></p>
-                <div class="separator"></div>
-                <p class="total-label total-amount">Tổng tiền: <span id="total1">0 VNĐ</span></p>
-            </div>
+			    <div class="mb-2 hstack">
+			        <label for="oldQuantity1" class="form-label" style="width: 50%;">Chỉ số điện cũ (kWh):</label>
+			        <input type="number" id="oldQuantity1" class="form-control" placeholder="Chỉ số điện cũ" 
+			        	inputmode="numeric" pattern="[0-9]*" oninput="calculateFee(1)" style="width: 50%;">
+			    </div>
+			    <div class="mb-2 hstack">
+			        <label for="newQuantity1" class="form-label" style="width: 50%;">Chỉ số điện mới (kWh):</label>
+			        <input type="number" id="newQuantity1" class="form-control" placeholder="Chỉ số điện mới" 
+			        	inputmode="numeric" pattern="[0-9]*" oninput="calculateFee(1)" style="width: 50%;">
+			    </div>
+			    <div class="mb-2 hstack">
+			        <label for="waterFee1" class="form-label" style="width: 50%;">Tiền nước:</label>
+			        <input type="number" id="waterFee1" class="form-control" placeholder="Tiền nước" 
+			        	inputmode="numeric" pattern="[0-9]*" oninput="calculateFee(1)" style="width: 50%;">
+			    </div>
+			    <div class="mb-2 hstack">
+			        <label for="roomFee1" class="form-label" style="width: 50%;">Tiền phòng:</label>
+			        <input type="number" id="roomFee1" class="form-control" placeholder="Tiền phòng" 
+			        	inputmode="numeric" pattern="[0-9]*" value="1800" oninput="calculateFee(1)" style="width: 50%;">
+			    </div>
+			    
+			    <p class="total-label">Tiền điện (x 1000 VNĐ): <span id="fee1">0 VNĐ</span></p>
+			    <p class="total-label">Tiền nước: (x1000 VNĐ): <span id="waterFeeDisplay1">0 VNĐ</span></p>
+			    <div class="separator"></div>
+			    <p class="total-label total-amount">Tổng tiền: <span id="total1">0 VNĐ</span></p>
+			</div>
 
-            <!-- Repeat for other tabs (Tab 2 to Tab 6) -->
+            <!-- Tab 2 -->
             <div class="tab-pane fade" id="content2" role="tabpanel">
-                <div class="mb-3">
-                    <label for="quantity2" class="form-label">Nhập chỉ số điện (kWh)</label>
-                    <input type="number" id="quantity2" class="form-control" placeholder="Enter quantity" oninput="calculateFee(2)">
-                </div>
-                <div class="mb-3">
-                    <label for="waterFee2" class="form-label">Tiền nước</label>
-                    <input type="number" id="waterFee2" class="form-control" placeholder="Enter water fee" oninput="calculateFee(2)">
-                </div>
-                <div class="mb-3">
-                    <label class="readonly-label">Tiền phòng:</label>
-                    <span id="roomFee2">1.200.000 VNĐ</span> <!-- Flexible value -->
-                </div>
-                <p class="total-label">Tiền điện: <span id="fee2">0 VNĐ</span></p>
-                <p class="total-label">Tiền nước: <span id="waterFeeDisplay2">0 VNĐ</span></p>
-                <div class="separator"></div>
-                <p class="total-amount">Tổng tiền: <span id="total2">0 VNĐ</span></p>
-            </div>
+			    <div class="mb-2 hstack">
+			        <label for="oldQuantity2" class="form-label" style="width: 50%;">Chỉ số điện cũ (kWh):</label>
+			        <input type="number" id="oldQuantity2" class="form-control" placeholder="Chỉ số điện cũ" 
+			        	inputmode="numeric" pattern="[0-9]*" oninput="calculateFee(2)" style="width: 50%;">
+			    </div>
+			    <div class="mb-2 hstack">
+			        <label for="newQuantity2" class="form-label" style="width: 50%;">Chỉ số điện mới (kWh):</label>
+			        <input type="number" id="newQuantity2" class="form-control" placeholder="Chỉ số điện mới" 
+			        	inputmode="numeric" pattern="[0-9]*" oninput="calculateFee(2)" style="width: 50%;">
+			    </div>
+			    <div class="mb-2 hstack">
+			        <label for="waterFee2" class="form-label" style="width: 50%;">Tiền nước:</label>
+			        <input type="number" id="waterFee2" class="form-control" placeholder="Tiền nước" 
+			        	inputmode="numeric" pattern="[0-9]*" oninput="calculateFee(2)" style="width: 50%;">
+			    </div>
+			    <div class="mb-2 hstack">
+			        <label for="roomFee2" class="form-label" style="width: 50%;">Tiền phòng:</label>
+			        <input type="number" id="roomFee2" class="form-control" placeholder="Tiền phòng" 
+			        	inputmode="numeric" pattern="[0-9]*" value="1800" oninput="calculateFee(2)" style="width: 50%;">
+			    </div>
+			    
+			    <p class="total-label">Tiền điện (x 1000 VNĐ): <span id="fee2">0 VNĐ</span></p>
+			    <p class="total-label">Tiền nước: (x1000 VNĐ): <span id="waterFeeDisplay2">0 VNĐ</span></p>
+			    <div class="separator"></div>
+			    <p class="total-label total-amount">Tổng tiền: <span id="total2">0 VNĐ</span></p>
+			</div>
 
+            <!-- Tab 3 -->
             <div class="tab-pane fade" id="content3" role="tabpanel">
-                <div class="mb-3">
-                    <label for="quantity3" class="form-label">Nhập chỉ số điện (kWh)</label>
-                    <input type="number" id="quantity3" class="form-control" placeholder="Enter quantity" oninput="calculateFee(3)">
-                </div>
-                <div class="mb-3">
-                    <label for="waterFee3" class="form-label">Tiền nước</label>
-                    <input type="number" id="waterFee3" class="form-control" placeholder="Enter water fee" oninput="calculateFee(3)">
-                </div>
-                <div class="mb-3">
-                    <label class="readonly-label">Tiền phòng:</label>
-                    <span id="roomFee3">1.500.000 VNĐ</span> <!-- Flexible value -->
-                </div>
-                <p class="total-label">Tiền điện: <span id="fee3">0 VNĐ</span></p>
-                <p class="total-label">Tiền nước: <span id="waterFeeDisplay3">0 VNĐ</span></p>
-                <div class="separator"></div>
-                <p class="total-amount">Tổng tiền: <span id="total3">0 VNĐ</span></p>
-            </div>
+			    <div class="mb-2 hstack">
+			        <label for="oldQuantity3" class="form-label" style="width: 50%;">Chỉ số điện cũ (kWh):</label>
+			        <input type="number" id="oldQuantity3" class="form-control" placeholder="Chỉ số điện cũ" 
+			        	inputmode="numeric" pattern="[0-9]*" oninput="calculateFee(3)" style="width: 50%;">
+			    </div>
+			    <div class="mb-2 hstack">
+			        <label for="newQuantity3" class="form-label" style="width: 50%;">Chỉ số điện mới (kWh):</label>
+			        <input type="number" id="newQuantity3" class="form-control" placeholder="Chỉ số điện mới" 
+			        	inputmode="numeric" pattern="[0-9]*" oninput="calculateFee(3)" style="width: 50%;">
+			    </div>
+			    <div class="mb-2 hstack">
+			        <label for="waterFee3" class="form-label" style="width: 50%;">Tiền nước:</label>
+			        <input type="number" id="waterFee3" class="form-control" placeholder="Tiền nước" 
+			        	inputmode="numeric" pattern="[0-9]*" oninput="calculateFee(3)" style="width: 50%;">
+			    </div>
+			    <div class="mb-2 hstack">
+			        <label for="roomFee3" class="form-label" style="width: 50%;">Tiền phòng:</label>
+			        <input type="number" id="roomFee3" class="form-control" placeholder="Tiền phòng" 
+			        	inputmode="numeric" pattern="[0-9]*" value="1800" oninput="calculateFee(3)" style="width: 50%;">
+			    </div>
+			    
+			    <p class="total-label">Tiền điện (x 1000 VNĐ): <span id="fee3">0 VNĐ</span></p>
+			    <p class="total-label">Tiền nước: (x1000 VNĐ): <span id="waterFeeDisplay3">0 VNĐ</span></p>
+			    <div class="separator"></div>
+			    <p class="total-label total-amount">Tổng tiền: <span id="total3">0 VNĐ</span></p>
+			</div>
 
+            <!-- Tab 4 -->
             <div class="tab-pane fade" id="content4" role="tabpanel">
-                <div class="mb-3">
-                    <label for="quantity4" class="form-label">Nhập chỉ số điện (kWh)</label>
-                    <input type="number" id="quantity4" class="form-control" placeholder="Enter quantity" oninput="calculateFee(4)">
-                </div>
-                <div class="mb-3">
-                    <label for="waterFee4" class="form-label">Tiền nước</label>
-                    <input type="number" id="waterFee4" class="form-control" placeholder="Enter water fee" oninput="calculateFee(4)">
-                </div>
-                <div class="mb-3">
-                    <label class="readonly-label">Tiền phòng:</label>
-                    <span id="roomFee4">1.600.000 VNĐ</span> <!-- Flexible value -->
-                </div>
-                <p class="total-label">Tiền điện: <span id="fee4">0 VNĐ</span></p>
-                <p class="total-label">Tiền nước: <span id="waterFeeDisplay4">0 VNĐ</span></p>
-                <div class="separator"></div>
-                <p class="total-amount">Tổng tiền: <span id="total4">0 VNĐ</span></p>
-            </div>
+			    <div class="mb-2 hstack">
+			        <label for="oldQuantity4" class="form-label" style="width: 50%;">Chỉ số điện cũ (kWh):</label>
+			        <input type="number" id="oldQuantity4" class="form-control" placeholder="Chỉ số điện cũ" 
+			        	inputmode="numeric" pattern="[0-9]*" oninput="calculateFee(4)" style="width: 50%;">
+			    </div>
+			    <div class="mb-2 hstack">
+			        <label for="newQuantity4" class="form-label" style="width: 50%;">Chỉ số điện mới (kWh):</label>
+			        <input type="number" id="newQuantity4" class="form-control" placeholder="Chỉ số điện mới" 
+			        	inputmode="numeric" pattern="[0-9]*" oninput="calculateFee(4)" style="width: 50%;">
+			    </div>
+			    <div class="mb-2 hstack">
+			        <label for="waterFee4" class="form-label" style="width: 50%;">Tiền nước:</label>
+			        <input type="number" id="waterFee4" class="form-control" placeholder="Tiền nước" 
+			        	inputmode="numeric" pattern="[0-9]*" oninput="calculateFee(4)" style="width: 50%;">
+			    </div>
+			    <div class="mb-2 hstack">
+			        <label for="roomFee4" class="form-label" style="width: 50%;">Tiền phòng:</label>
+			        <input type="number" id="roomFee4" class="form-control" placeholder="Tiền phòng" 
+			        	inputmode="numeric" pattern="[0-9]*" value="1800" oninput="calculateFee(4)" style="width: 50%;">
+			    </div>
+			    
+			    <p class="total-label">Tiền điện (x 1000 VNĐ): <span id="fee4">0 VNĐ</span></p>
+			    <p class="total-label">Tiền nước: (x1000 VNĐ): <span id="waterFeeDisplay4">0 VNĐ</span></p>
+			    <div class="separator"></div>
+			    <p class="total-label total-amount">Tổng tiền: <span id="total4">0 VNĐ</span></p>
+			</div>
 
+            <!-- Tab 5 -->
             <div class="tab-pane fade" id="content5" role="tabpanel">
-                <div class="mb-3">
-                    <label for="quantity5" class="form-label">Nhập chỉ số điện (kWh)</label>
-                    <input type="number" id="quantity5" class="form-control" placeholder="Enter quantity" oninput="calculateFee(5)">
-                </div>
-                <div class="mb-3">
-                    <label for="waterFee5" class="form-label">Tiền nước</label>
-                    <input type="number" id="waterFee5" class="form-control" placeholder="Enter water fee" oninput="calculateFee(5)">
-                </div>
-                <div class="mb-3">
-                    <label class="readonly-label">Tiền phòng:</label>
-                    <span id="roomFee5">1.700.000 VNĐ</span> <!-- Flexible value -->
-                </div>
-                <p class="total-label">Tiền điện: <span id="fee5">0 VNĐ</span></p>
-                <p class="total-label">Tiền nước: <span id="waterFeeDisplay5">0 VNĐ</span></p>
-                <div class="separator"></div>
-                <p class="total-amount">Tổng tiền: <span id="total5">0 VNĐ</span></p>
-            </div>
+			    <div class="mb-2 hstack">
+			        <label for="oldQuantity5" class="form-label" style="width: 50%;">Chỉ số điện cũ (kWh):</label>
+			        <input type="number" id="oldQuantity5" class="form-control" placeholder="Chỉ số điện cũ" 
+			        	inputmode="numeric" pattern="[0-9]*" oninput="calculateFee(5)" style="width: 50%;">
+			    </div>
+			    <div class="mb-2 hstack">
+			        <label for="newQuantity5" class="form-label" style="width: 50%;">Chỉ số điện mới (kWh):</label>
+			        <input type="number" id="newQuantity5" class="form-control" placeholder="Chỉ số điện mới" 
+			        	inputmode="numeric" pattern="[0-9]*" oninput="calculateFee(5)" style="width: 50%;">
+			    </div>
+			    <div class="mb-2 hstack">
+			        <label for="waterFee5" class="form-label" style="width: 50%;">Tiền nước:</label>
+			        <input type="number" id="waterFee5" class="form-control" placeholder="Tiền nước" 
+			        	inputmode="numeric" pattern="[0-9]*" oninput="calculateFee(5)" style="width: 50%;">
+			    </div>
+			    <div class="mb-2 hstack">
+			        <label for="roomFee5" class="form-label" style="width: 50%;">Tiền phòng:</label>
+			        <input type="number" id="roomFee5" class="form-control" placeholder="Tiền phòng" 
+			        	inputmode="numeric" pattern="[0-9]*" value="1800" oninput="calculateFee(5)" style="width: 50%;">
+			    </div>
+			    
+			    <p class="total-label">Tiền điện (x 1000 VNĐ): <span id="fee5">0 VNĐ</span></p>
+			    <p class="total-label">Tiền nước: (x1000 VNĐ): <span id="waterFeeDisplay5">0 VNĐ</span></p>
+			    <div class="separator"></div>
+			    <p class="total-label total-amount">Tổng tiền: <span id="total5">0 VNĐ</span></p>
+			</div>
 
+            <!-- Tab 6 -->
             <div class="tab-pane fade" id="content6" role="tabpanel">
-                <div class="mb-3">
-                    <label for="quantity6" class="form-label">Nhập chỉ số điện (kWh)</label>
-                    <input type="number" id="quantity6" class="form-control" placeholder="Enter quantity" oninput="calculateFee(6)">
-                </div>
-                <div class="mb-3">
-                    <label for="waterFee6" class="form-label">Tiền nước</label>
-                    <input type="number" id="waterFee6" class="form-control" placeholder="Enter water fee" oninput="calculateFee(6)">
-                </div>
-                <div class="mb-3">
-                    <label class="readonly-label">Tiền phòng:</label>
-                    <span id="roomFee6">1.800.000 VNĐ</span> <!-- Flexible value -->
-                </div>
-                <p class="total-label">Tiền điện: <span id="fee6">0 VNĐ</span></p>
-                <p class="total-label">Tiền nước: <span id="waterFeeDisplay6">0 VNĐ</span></p>
-                <div class="separator"></div>
-                <p class="total-amount">Tổng tiền: <span id="total6">0 VNĐ</span></p>
-            </div>
+			    <div class="mb-2 hstack">
+			        <label for="oldQuantity6" class="form-label" style="width: 50%;">Chỉ số điện cũ (kWh):</label>
+			        <input type="number" id="oldQuantity6" class="form-control" placeholder="Chỉ số điện cũ" 
+			        	inputmode="numeric" pattern="[0-9]*" oninput="calculateFee(6)" style="width: 50%;">
+			    </div>
+			    <div class="mb-2 hstack">
+			        <label for="newQuantity6" class="form-label" style="width: 50%;">Chỉ số điện mới (kWh):</label>
+			        <input type="number" id="newQuantity6" class="form-control" placeholder="Chỉ số điện mới" 
+			        	inputmode="numeric" pattern="[0-9]*" oninput="calculateFee(6)" style="width: 50%;">
+			    </div>
+			    <div class="mb-2 hstack">
+			        <label for="waterFee6" class="form-label" style="width: 50%;">Tiền nước:</label>
+			        <input type="number" id="waterFee6" class="form-control" placeholder="Tiền nước" 
+			        	inputmode="numeric" pattern="[0-9]*" oninput="calculateFee(6)" style="width: 50%;">
+			    </div>
+			    <div class="mb-2 hstack">
+			        <label for="roomFee6" class="form-label" style="width: 50%;">Tiền phòng:</label>
+			        <input type="number" id="roomFee6" class="form-control" placeholder="Tiền phòng" 
+			        	inputmode="numeric" pattern="[0-9]*" value="2000" oninput="calculateFee(6)" style="width: 50%;">
+			    </div>
+			    
+			    <p class="total-label">Tiền điện (x 1000 VNĐ): <span id="fee6">0 VNĐ</span></p>
+			    <p class="total-label">Tiền nước (x 1000 VNĐ): <span id="waterFeeDisplay6">0 VNĐ</span></p>
+			    <div class="separator"></div>
+			    <p class="total-label total-amount">Tổng tiền: <span id="total6">0 VNĐ</span></p>
+			</div>
         </div>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    
     <script>
-        const constantValue = 3000;
-
-        function formatCurrency(amount) {
-            return `${amount.toLocaleString()} VNĐ`;
-        }
-
-        function calculateFee(tabIndex) {
-            const quantity = document.getElementById(`quantity${tabIndex}`).value;
-            const waterFee = document.getElementById(`waterFee${tabIndex}`).value;
-            const roomFee = parseFloat(document.getElementById(`roomFee${tabIndex}`).innerText.replace(/\./g, '').replace(' VNĐ', ''));
-
-            const electricityFee = quantity * constantValue;
-            const totalFee = (parseFloat(electricityFee) || 0) + (parseFloat(waterFee) || 0) + roomFee;
-
-            document.getElementById(`fee${tabIndex}`).innerText = formatCurrency(electricityFee);
-            document.getElementById(`waterFeeDisplay${tabIndex}`).innerText = formatCurrency(waterFee);
-            document.getElementById(`total${tabIndex}`).innerText = formatCurrency(totalFee);
-        }
+	    const constantValue = 3000;
+	
+	    function formatCurrency(amount) {
+	        return `${amount.toLocaleString()} VNĐ`;
+	    }
+	
+	    function calculateFee(tabIndex) {
+	        const oldQuantity = parseFloat(document.getElementById(`oldQuantity${tabIndex}`).value) || 0;
+	        const newQuantity = parseFloat(document.getElementById(`newQuantity${tabIndex}`).value) || 0;
+	        const waterFee = parseFloat(document.getElementById(`waterFee${tabIndex}`).value) || 0;
+	        const roomFee = parseFloat(document.getElementById(`roomFee${tabIndex}`).value) || 0;
+	
+	        const quantity = newQuantity - oldQuantity; // Calculate the electricity consumption
+	        const electricityFee = quantity * constantValue;
+	        const totalFee = electricityFee + waterFee + roomFee;
+	
+	        document.getElementById(`fee${tabIndex}`).innerText = formatCurrency(electricityFee);
+	        document.getElementById(`waterFeeDisplay${tabIndex}`).innerText = formatCurrency(waterFee);
+	        document.getElementById(`total${tabIndex}`).innerText = formatCurrency(totalFee);
+	    }
     </script>
 </body>
 </html>
